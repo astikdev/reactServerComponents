@@ -26,17 +26,3 @@ export const deletePost = async (id: string): Promise<Post> => {
   console.log("response: ", response);
   return response.data;
 };
-
-// export const deleteUser = async ({ id, assignedCaId }: UserDeleteParams) => {
-//   const response = await api.delete(`/user/${id}`, {
-//     params: {
-//       assigncaid: assignedCaId,
-//     },
-//   });
-//   return response.data;
-// };
-
-// export const editUser = async (id: number, body: EditUserParams) => {
-//   const response = await api.patch(`/user/${id}`, body);
-//   return response.data;
-// };
