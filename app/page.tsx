@@ -7,7 +7,6 @@ import { Suspense } from "react";
 export default async function Home() {
   const response = await getPostsList();
 
-  // Skeleton Loader Component
   const SkeletonLoader = () => (
     <div className="space-y-6">
       {[...Array(5)].map((_, index) => (
@@ -63,12 +62,10 @@ export default async function Home() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Sticky Heading */}
       <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center sticky top-0 bg-white py-4 shadow z-10">
         Posts
       </h1>
       <Suspense fallback={<SkeletonLoader />}>
-        {/* Map through posts and render PostCard */}
         <div className="space-y-6 p-10">
           {response.length > 0 &&
             response?.map((item: Post) => (
