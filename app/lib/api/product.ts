@@ -17,12 +17,10 @@ export const editPostDetails = async (body: Post): Promise<Post> => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  console.log("response: ", response);
   return response.data;
 };
 
 export const deletePost = async (id: string): Promise<Post> => {
   const response = await api.delete(`/posts/${id}`);
-  console.log("response: ", response);
   return response.data;
 };
